@@ -7,18 +7,17 @@ public class Employee {
     private int idNumber;
     private double salary;
     @Autowired
-    private String department;
+    private Department department;
 
     public Employee(){}
 
-    public Employee(String name, int idNumber, String department, double salary) {
+    public Employee(String name, int idNumber, double salary, Department department) {
         this.name = name;
         this.idNumber = idNumber;
-        this.department = department;
         this.salary = salary;
+        this.department = department;
     }
 
-    // getters and setters
     public String getName() {
         return name;
     }
@@ -35,14 +34,6 @@ public class Employee {
         this.idNumber = idNumber;
     }
 
-    public String getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
-    }
-
     public double getSalary() {
         return salary;
     }
@@ -51,13 +42,21 @@ public class Employee {
         this.salary = salary;
     }
 
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
                 "name='" + name + '\'' +
                 ", idNumber=" + idNumber +
-                ", department='" + department + '\'' +
                 ", salary=" + salary +
+                ", department=" + department +
                 '}';
     }
 }
